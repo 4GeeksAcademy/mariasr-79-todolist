@@ -7,8 +7,8 @@ import { FaTrash } from "react-icons/fa";
 const Home = () => {
 	const [ inputValue, setInputValue ] = useState("")
 	const [ todos, setTodos ] = useState([])
-	const handleForm = (e) => {
-		e.preventDefault()
+	const handleForm = (event) => {
+		event.preventDefault()
 		setTodos(todos.concat(inputValue));
 		
 			setInputValue("");
@@ -19,7 +19,7 @@ const Home = () => {
 			
 				<form onSubmit={handleForm}>
 			<input type="text"
-			onChange={(e) => {setInputValue(e.target.value)}}
+			onChange={(event) => {setInputValue(event.target.value)}}
 			value={inputValue}
 			placeholder="What to you need to do?"></input>
 			<button style={{opacity:0}} type="submit"></button>
